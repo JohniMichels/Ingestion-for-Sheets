@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+        <script>
+            google.script.run.withSuccessHandler(function(settings) {
+                let targetUrl = document.getElementById('targetUrl');
+                let headers = document.getElementById('headers');
+                targetUrl.value = settings.targetUrl;
+                headers.value = settings.headers;
+            }).getSettings();
+            google.script.run.withSuccessHandler(function(sheets) {
+                let sheetsInput = document.getElementById('sheetsInput')
+                sheets.forEach(function(sheet) {
+                    let label = document.createElement('label');
+                    label.style.display = 'block';
+                    let input = document.createElement('input');
+                    input.type = 'checkbox';
+                    input.checked = sheet.selected;
+                    input.value = sheet.name;
+                    let h5 = document.createElement('h5');
+                    h5.innerText = sheet.name;
+                    h5.style.marginLeft = '10px';
+
+                    sheetsInput.appendChild(label);
+                    label.appendChild(input);
+                    label.appendChild(h5);
+                });
+            }).getSheetsSelection();
+        </script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-font-smoothing:antialiased;
+            -moz-font-smoothing:antialiased;
+            -o-font-smoothing:antialiased;
+            font-smoothing:antialiased;
+            text-rendering:optimizeLegibility;
+        }
+        body {
+            font-family:"Open Sans", Helvetica, Arial, sans-serif;
+            font-weight:300;
+            font-size: 12px;
+            line-height:30px;
+            color:#777;
+            background:#0CF;
+        }
+        .container {
+            max-width:400px;
+            width:90%;
+            margin:0 auto;
+            position:relative;
+        }
+        #contact input[type="text"], #contact input[type="email"], #contact input[type="textarea"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] {
+            font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+        }
+        #contact {
+            background:#F9F9F9;
+            padding:25px;
+            margin:50px 0;
+        }
+        #contact h3 {
+            color: #F96;
+            display: block;
+            font-size: 30px;
+            font-weight: 400;
+        }
+        #contact h4 {
+            margin:5px 0 15px;
+            display:block;
+            font-size:13px;
+        }
+        #contact h5 {
+            margin:5px 0 15px;
+            display:inline;
+            font-size:13px;
+        }
+        fieldset {
+            border: medium none !important;
+            margin: 0 0 10px;
+            min-width: 100%;
+            padding: 0;
+            width: 100%;
+        }
+        #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact input[type="textarea"], #contact textarea {
+            width:100%;
+            border:1px solid #CCC;
+            background:#FFF;
+            margin:0 0 5px;
+            padding:10px;
+        }
+        #contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact input[type="textarea"]:hover, #contact textarea:hover {
+            -webkit-transition:border-color 0.3s ease-in-out;
+            -moz-transition:border-color 0.3s ease-in-out;
+            transition:border-color 0.3s ease-in-out;
+            border:1px solid #AAA;
+        }
+        #contact textarea {
+            height:100px;
+            max-width:100%;
+            resize:none;
+        }
+        
+        #contact button[type="submit"] {
+            cursor:pointer;
+            width:100%;
+            border:none;
+            background:#0CF;
+            color:#FFF;
+            margin:0 0 5px;
+            padding:10px;
+            font-size:15px;
+        }
+
+        #contact button[type="submit"]:hover {
+            background:#09C;
+            -webkit-transition:background 0.3s ease-in-out;
+            -moz-transition:background 0.3s ease-in-out;
+            transition:background-color 0.3s ease-in-out;
+        }
+        #contact button[type="submit"]:active {
+            box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        #contact input:focus, #contact textarea:focus {
+            outline:0;
+            border:1px solid #999;
+        }
+        ::-webkit-input-placeholder {
+            color:#888;
+        }
+        :-moz-placeholder {
+            color:#888;
+        }
+        ::-moz-placeholder {
+            color:#888;
+        }
+        :-ms-input-placeholder {
+            color:#888;
+        }
+
+        input[type=checkbox], input[type=radio] {
+            vertical-align: middle;
+            position: relative;
+            bottom: 1px;
+        }
+
+    </style>
+    <body>
+        <div class="container">
+            <form id="contact" action="" method="post">
+                <h3>Settings</h3>
+                <h4>Define endpoint to the data</h4>
+                <fieldset>
+                    <label for="targetUrl">Endpoint</label>
+                    <input id="targetUrl" name="targetUrl" placeholder="https://domain.com" type="url" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <label>Headers</label>
+                    <textarea id="headers" placeholder='{"x-api-key": "apiKey"}' type="text" rows="4" tabindex="2"  required></textarea>
+                </fieldset>
+                <fieldset id="sheetsInput">
+                    <legend>Sheets</legend>
+                </fieldset>
+                <fieldset>
+                    <button name="save" type="submit" id="saveBtn" onclick="google.script.run.withSuccessHandler(google.script.host.close).saveSettings(
+                        document.getElementById('targetUrl').value,
+                        document.getElementById('headers').value,
+                        [...document.getElementById('sheetsInput').querySelectorAll('input[type=checkbox]:checked')]
+                            .map(e => e.value)
+                    )">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
