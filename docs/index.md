@@ -1,3 +1,7 @@
+---
+title: Home
+layout: home
+---
 # Ingestion for Sheets
 
 This is an addon for google sheets that allows you to ingest data from the sheets into an api endpoint.
