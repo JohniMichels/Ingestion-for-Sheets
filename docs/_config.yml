@@ -1,6 +1,4 @@
 title: Ingestion for Sheets
 description: A simple addon to send sheet modifications to a endpoint
-remote_theme: just-the-docs/just-the-docs
-plugins:
-  - jekyll-remote-theme
+url: https://johnimichels.github.io/Ingestion-for-Sheets
 theme: just-the-docs
