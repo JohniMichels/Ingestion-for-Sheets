@@ -1,0 +1,41 @@
+site_name: Ingestion for Sheets
+site_url: https://johnimichels.github.io/Ingestion-for-Sheets/
+theme:
+  palette:
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  name: material
+  favicon: ./../img/favicon.ico
+  logo: ./../img/logo128.png
+  features:
+    - navigation.expand
+repo_url: https://github.com/JohniMichels/Ingestion-for-Sheets
+site_description: Ingestion for Sheets is a Google Sheets add-on that allows you to import data from a sheet into a configured api endpoint.
+site_author: Johni Michels
+copyright: Johni Michels 2023
+nav:
+  - Home: index.md
+  - User Guide:
+      - Getting Started: user-guide/getting-started.md
+      - Queue Management: user-guide/queue-management.md
+  - Privacy: privacy.md
+  - License: license.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JohniMichels
