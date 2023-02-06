@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://johnimichels.github.io/Ingestion-for-Sheets/</loc>
+         <lastmod>2023-02-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://johnimichels.github.io/Ingestion-for-Sheets/license/</loc>
+         <lastmod>2023-02-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://johnimichels.github.io/Ingestion-for-Sheets/privacy/</loc>
+         <lastmod>2023-02-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://johnimichels.github.io/Ingestion-for-Sheets/user-guide/getting-started/</loc>
+         <lastmod>2023-02-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://johnimichels.github.io/Ingestion-for-Sheets/user-guide/queue-management/</loc>
+         <lastmod>2023-02-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
