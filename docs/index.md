@@ -8,6 +8,7 @@ It'll accumulate changes into a queue, and send them to the endpoint in batches 
 
 You can see the list of changes that are queued up in the addon menu.
 
+
 Every day it'll pack all sheets into a single json object, and send it to the endpoint to ensure that you have a full copy of the data.
 
 ___
