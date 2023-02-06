@@ -1,7 +1,3 @@
----
-title: Home
-layout: home
----
 # Ingestion for Sheets
 
 This is an addon for google sheets that allows you to ingest data from the sheets into an api endpoint.
@@ -12,4 +8,9 @@ It'll accumulate changes into a queue, and send them to the endpoint in batches 
 
 You can see the list of changes that are queued up in the addon menu.
 
+
 Every day it'll pack all sheets into a single json object, and send it to the endpoint to ensure that you have a full copy of the data.
+
+___
+
+You can request features, report bugs, or ask questions in the [github issues](https://github.com/JohniMichels/Ingestion-for-Sheets/issues/new).
